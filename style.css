@@ -1,0 +1,2675 @@
+/* =========================================
+   SHRI BALAJI E-LIBRARY
+   STEP 2 — NAVBAR + HERO
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Noto Sans Devanagari", Arial, sans-serif;
+
+    background: #f5f3ee;
+
+    color: #151515;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    padding: 18px 4%;
+}
+
+
+.navbar {
+    width: 100%;
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background: rgba(15, 15, 15, 0.45);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 18px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.brand-logo {
+    display: block;
+
+    width: 210px;
+
+    height: auto;
+
+    max-height: 58px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: auto;
+
+    margin-right: 32px;
+}
+
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.nav-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 110px;
+
+    padding: 11px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 100px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.nav-whatsapp:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-button {
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 16px;
+
+    height: 1px;
+
+    background: #ffffff;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 4%;
+
+    width: 92%;
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    background: rgba(20, 20, 20, 0.96);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.mobile-menu.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.mobile-menu a {
+    color: #ffffff;
+
+    padding: 14px 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #151515;
+}
+
+
+/* =========================================
+   HERO VIDEO
+========================================= */
+
+.hero-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   VIDEO OVERLAY
+========================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.48) 0%,
+            rgba(0, 0, 0, 0.30) 45%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    margin-top: 50px;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+.hero-label {
+    margin-bottom: 24px;
+
+    font-size: 14px;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 500;
+
+    opacity: 0.9;
+}
+
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 92px);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+
+    font-weight: 700;
+
+    margin-bottom: 28px;
+}
+
+
+.hero h1 span {
+    font-weight: 400;
+
+    opacity: 0.92;
+}
+
+
+.hero-description {
+    max-width: 520px;
+
+    margin: 0 auto 18px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.86);
+}
+
+
+.hero-location {
+    margin-bottom: 34px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.18em;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================
+   HERO BUTTON
+========================================= */
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 15px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 100px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.hero-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-3px);
+}
+
+
+.hero-button span {
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 28px;
+
+    right: 4%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+}
+
+
+.scroll-line {
+    width: 50px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   TEMPORARY SECTION
+========================================= */
+
+.temporary-section {
+    min-height: 35vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f3ee;
+
+    color: #151515;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 18px;
+
+        margin-right: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-whatsapp {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 180px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 12px 4%;
+    }
+
+
+    .navbar {
+        min-height: 62px;
+
+        padding: 8px 12px;
+
+        border-radius: 15px;
+    }
+
+
+    .brand-logo {
+        width: 155px;
+
+        max-height: 48px;
+    }
+
+
+    .nav-links,
+    .nav-whatsapp {
+        display: none;
+    }
+
+
+    .menu-button {
+        display: flex;
+    }
+
+
+    .hero {
+        min-height: 100svh;
+    }
+
+
+    .hero-content {
+        width: 88%;
+
+        margin-top: 40px;
+    }
+
+
+    .hero-label {
+        font-size: 11px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 62px);
+
+        line-height: 1.12;
+
+        margin-bottom: 22px;
+    }
+
+
+    .hero-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-location {
+        font-size: 9px;
+
+        letter-spacing: 0.12em;
+
+        margin-bottom: 28px;
+    }
+
+
+    .hero-button {
+        padding: 13px 19px;
+
+        font-size: 13px;
+    }
+
+
+    .scroll-indicator {
+        right: auto;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        bottom: 22px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .brand-logo {
+        width: 135px;
+    }
+
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+}
+/* =========================================
+   STEP 3 — WHY SECTION
+========================================= */
+
+.why-section {
+    position: relative;
+
+    padding: 150px 5% 130px;
+
+    background: #f5f3ee;
+
+    overflow: hidden;
+}
+
+
+.why-container {
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.why-intro {
+    max-width: 850px;
+
+    margin-bottom: 110px;
+}
+
+
+.section-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: #68766a;
+
+    font-weight: 700;
+}
+
+
+.why-intro h2 {
+    max-width: 850px;
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 600;
+
+    color: #151515;
+}
+
+
+.why-intro h2 span {
+    font-weight: 400;
+
+    color: #68766a;
+}
+
+
+.why-intro-text {
+    max-width: 570px;
+
+    margin-top: 32px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #5b5b58;
+}
+
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.why-features {
+    border-top: 1px solid rgba(21, 21, 21, 0.16);
+}
+
+
+.why-feature {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 50px;
+
+    padding: 48px 0;
+
+    border-bottom: 1px solid rgba(21, 21, 21, 0.16);
+
+    transition:
+        padding-left 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.why-feature:hover {
+    padding-left: 20px;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.feature-number {
+    font-size: 12px;
+
+    letter-spacing: 0.12em;
+
+    color: #8b8b85;
+
+    padding-top: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FEATURE CONTENT
+========================================= */
+
+.feature-content {
+    max-width: 720px;
+}
+
+
+.feature-content h3 {
+    margin-bottom: 12px;
+
+    font-size: clamp(25px, 3vw, 36px);
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: -0.025em;
+
+    color: #151515;
+}
+
+
+.feature-content p {
+    max-width: 610px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #666661;
+}
+
+
+/* =========================================
+   BOTTOM STATEMENT
+========================================= */
+
+.why-bottom {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-top: 85px;
+}
+
+
+.why-bottom p {
+    max-width: 570px;
+
+    font-size: clamp(25px, 3.5vw, 42px);
+
+    line-height: 1.25;
+
+    letter-spacing: -0.03em;
+
+    color: #151515;
+}
+
+
+.why-bottom span {
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: #777770;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .why-section {
+        padding: 100px 7% 90px;
+    }
+
+
+    .why-intro {
+        margin-bottom: 70px;
+    }
+
+
+    .section-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 9px;
+    }
+
+
+    .why-intro h2 {
+        font-size: clamp(38px, 11vw, 56px);
+
+        line-height: 1.1;
+    }
+
+
+    .why-intro-text {
+        margin-top: 24px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .why-feature {
+        grid-template-columns: 45px 1fr;
+
+        gap: 18px;
+
+        padding: 34px 0;
+    }
+
+
+    .why-feature:hover {
+        padding-left: 0;
+    }
+
+
+    .feature-number {
+        font-size: 10px;
+    }
+
+
+    .feature-content h3 {
+        font-size: 25px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .feature-content p {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    .why-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 60px;
+
+        gap: 24px;
+    }
+
+
+    .why-bottom p {
+        font-size: 29px;
+    }
+
+
+    .why-bottom span {
+        font-size: 9px;
+
+        white-space: normal;
+    }
+
+}
+/* =========================
+   STEP 4 — LIBRARY EXPERIENCE
+========================= */
+
+.experience-section {
+    background: #f5f3ee;
+    padding: 130px 7vw;
+    overflow: hidden;
+}
+
+.experience-container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+/* IMAGE */
+
+.experience-image-wrap {
+    position: relative;
+}
+
+.experience-image {
+    width: 100%;
+    height: 650px;
+
+    display: block;
+    object-fit: cover;
+
+    border-radius: 2px;
+}
+
+
+/* IMAGE LABEL */
+
+.experience-image-label {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+
+    z-index: 2;
+
+    background: rgba(21, 21, 21, 0.9);
+    color: #ffffff;
+
+    padding: 10px 14px;
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    font-weight: 600;
+}
+
+
+/* CONTENT */
+
+.experience-content {
+    max-width: 470px;
+}
+
+.experience-content h2 {
+    margin: 18px 0 28px;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.05;
+
+    font-weight: 500;
+    letter-spacing: -2.5px;
+
+    color: #151515;
+}
+
+.experience-content h2 span {
+    color: #68766a;
+}
+
+
+.experience-text {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    color: #55514b;
+}
+
+
+/* LINE */
+
+.experience-line {
+    width: 70px;
+    height: 1px;
+
+    background: #151515;
+
+    margin: 40px 0 25px;
+}
+
+
+/* LOCATION */
+
+.experience-location {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.experience-location span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: #77736c;
+}
+
+.experience-location strong {
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #151515;
+}
+
+
+/* =========================
+   STEP 4 — MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .experience-section {
+        padding: 90px 6vw;
+    }
+
+    .experience-container {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .experience-image {
+        height: 500px;
+    }
+
+    .experience-content {
+        max-width: 100%;
+    }
+
+    .experience-content h2 {
+        font-size: clamp(40px, 11vw, 58px);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .experience-section {
+        padding: 70px 5vw;
+    }
+
+    .experience-image {
+        height: 390px;
+    }
+
+    .experience-image-label {
+        top: 15px;
+        left: 15px;
+
+        padding: 8px 10px;
+
+        font-size: 9px;
+    }
+
+    .experience-content h2 {
+        letter-spacing: -1.5px;
+        margin-bottom: 22px;
+    }
+
+    .experience-text {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+}
+/* =========================
+   STEP 5 — FACILITIES
+========================= */
+
+.facilities-section {
+    background: #151515;
+    color: #ffffff;
+    padding: 130px 7vw;
+}
+
+.facilities-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.facilities-heading {
+    max-width: 700px;
+}
+
+.facilities-heading .section-eyebrow {
+    color: #a98b6a;
+}
+
+.facilities-heading h2 {
+    margin: 18px 0 25px;
+
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+}
+
+.facilities-heading h2 span {
+    color: #a7afa8;
+}
+
+.facilities-intro {
+    max-width: 550px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #bcb9b2;
+}
+
+
+/* FACILITY LIST */
+
+.facilities-list {
+    margin-top: 85px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #383838;
+}
+
+
+.facility-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    padding: 30px 20px 30px 0;
+
+    border-bottom: 1px solid #383838;
+
+    transition:
+        transform 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.facility-item:nth-child(odd) {
+    border-right: 1px solid #383838;
+    padding-right: 50px;
+}
+
+.facility-item:nth-child(even) {
+    padding-left: 50px;
+}
+
+
+.facility-item:hover {
+    transform: translateX(5px);
+}
+
+
+.facility-number {
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    color: #777777;
+
+    padding-top: 5px;
+}
+
+
+.facility-item h3 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #ffffff;
+}
+
+
+.facility-item p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #9e9e9e;
+}
+
+
+/* BOTTOM */
+
+.facilities-bottom {
+    margin-top: 70px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.facilities-bottom span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    color: #777777;
+}
+
+.facilities-bottom strong {
+    max-width: 350px;
+
+    font-size: 20px;
+    line-height: 1.4;
+
+    font-weight: 400;
+    text-align: right;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   STEP 5 — MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .facilities-section {
+        padding: 90px 6vw;
+    }
+
+    .facilities-heading h2 {
+        letter-spacing: -2px;
+    }
+
+    .facilities-list {
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+    }
+
+    .facility-item,
+    .facility-item:nth-child(odd),
+    .facility-item:nth-child(even) {
+        border-right: none;
+        padding: 25px 0;
+    }
+
+    .facilities-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-top: 55px;
+    }
+
+    .facilities-bottom strong {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .facilities-section {
+        padding: 70px 5vw;
+    }
+
+    .facilities-heading h2 {
+        font-size: 48px;
+    }
+
+    .facility-item {
+        grid-template-columns: 40px 1fr;
+        gap: 15px;
+    }
+
+    .facility-item h3 {
+        font-size: 20px;
+    }
+
+    .facility-item p {
+        font-size: 13px;
+    }
+
+}
+/* =========================
+   STEP 6 — MEMBERSHIP
+========================= */
+
+.membership-section {
+    background: #f5f3ee;
+    padding: 130px 7vw;
+    overflow: hidden;
+}
+
+.membership-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* TOP */
+
+.membership-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #d8d4cc;
+}
+
+.membership-top .section-eyebrow {
+    margin: 0;
+}
+
+.membership-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #77736c;
+}
+
+
+/* MAIN */
+
+.membership-main {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+
+    padding: 80px 0 90px;
+
+    align-items: center;
+}
+
+
+/* PRICE */
+
+.membership-price {
+    font-size: clamp(90px, 13vw, 170px);
+    line-height: 0.85;
+
+    font-weight: 500;
+    letter-spacing: -8px;
+
+    color: #151515;
+    white-space: nowrap;
+}
+
+.membership-price span {
+    font-size: 45px;
+    vertical-align: top;
+
+    position: relative;
+    top: 15px;
+
+    letter-spacing: -2px;
+}
+
+.membership-price small {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    color: #77736c;
+}
+
+
+/* COPY */
+
+.membership-copy {
+    max-width: 500px;
+}
+
+.membership-copy h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.05;
+
+    font-weight: 500;
+    letter-spacing: -2.5px;
+
+    color: #151515;
+}
+
+.membership-copy h2 span {
+    color: #68766a;
+}
+
+.membership-copy p {
+    max-width: 440px;
+
+    margin: 0 0 32px;
+
+    font-size: 16px;
+    line-height: 1.85;
+
+    color: #55514b;
+}
+
+
+/* BUTTON */
+
+.membership-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px 20px;
+
+    background: #151515;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background 0.3s ease,
+        gap 0.3s ease;
+}
+
+.membership-button span {
+    font-size: 18px;
+}
+
+.membership-button:hover {
+    background: #242424;
+    gap: 27px;
+}
+
+
+/* NOTE */
+
+.membership-note {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #d8d4cc;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    color: #77736c;
+}
+
+
+/* =========================
+   STEP 6 — MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .membership-section {
+        padding: 90px 6vw;
+    }
+
+    .membership-main {
+        grid-template-columns: 1fr;
+        gap: 55px;
+
+        padding: 65px 0 70px;
+    }
+
+    .membership-price {
+        font-size: 110px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .membership-section {
+        padding: 70px 5vw;
+    }
+
+    .membership-top {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .membership-label {
+        font-size: 8px;
+        text-align: right;
+    }
+
+    .membership-main {
+        padding: 55px 0 60px;
+    }
+
+    .membership-price {
+        font-size: 90px;
+        letter-spacing: -5px;
+    }
+
+    .membership-price span {
+        font-size: 30px;
+        top: 8px;
+    }
+
+    .membership-price small {
+        font-size: 14px;
+    }
+
+    .membership-copy h2 {
+        letter-spacing: -1.5px;
+    }
+
+    .membership-copy p {
+        font-size: 15px;
+    }
+
+    .membership-button {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .membership-note {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+/* =========================
+   STEP 7 — GALLERY
+========================= */
+
+.gallery-section {
+    background: #ffffff;
+    padding: 130px 7vw;
+    overflow: hidden;
+}
+
+.gallery-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 65px;
+}
+
+.gallery-heading h2 {
+    margin: 18px 0 0;
+
+    font-size: clamp(52px, 6vw, 78px);
+    line-height: 0.95;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+
+    color: #151515;
+}
+
+.gallery-heading h2 span {
+    color: #68766a;
+}
+
+.gallery-intro {
+    max-width: 350px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #68645d;
+}
+
+
+/* VIDEO */
+
+.gallery-video-wrap {
+    position: relative;
+
+    width: 100%;
+
+    background: #151515;
+
+    overflow: hidden;
+}
+
+.gallery-video {
+    display: block;
+
+    width: 100%;
+    height: 650px;
+
+    object-fit: cover;
+}
+
+
+/* VIDEO CAPTION */
+
+.video-caption {
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 11px 16px;
+
+    background: rgba(21, 21, 21, 0.9);
+
+    color: #ffffff;
+}
+
+.video-caption span {
+    font-size: 10px;
+    color: #a7afa8;
+}
+
+.video-caption strong {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* PHOTO GRID */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.gallery-photo {
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+}
+
+.gallery-photo-large {
+    height: 430px;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.gallery-photo:hover img {
+    transform: scale(1.04);
+}
+
+
+/* PHOTO NUMBER */
+
+.photo-number {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(21, 21, 21, 0.85);
+
+    color: #ffffff;
+
+    font-size: 10px;
+}
+
+
+/* BOTTOM */
+
+.gallery-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 35px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #dedbd4;
+}
+
+.gallery-bottom span {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+
+    color: #77736c;
+}
+
+.gallery-bottom strong {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #151515;
+}
+
+
+/* =========================
+   STEP 7 — TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .gallery-section {
+        padding: 90px 6vw;
+    }
+
+    .gallery-heading {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-bottom: 50px;
+    }
+
+    .gallery-video {
+        height: 500px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-photo-large {
+        grid-column: 1 / -1;
+        height: 400px;
+    }
+
+}
+
+
+/* =========================
+   STEP 7 — MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .gallery-section {
+        padding: 70px 5vw;
+    }
+
+    .gallery-heading h2 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .gallery-video {
+        height: 390px;
+    }
+
+    .video-caption {
+        left: 15px;
+        bottom: 15px;
+
+        padding: 9px 12px;
+    }
+
+    .video-caption strong {
+        font-size: 11px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .gallery-photo,
+    .gallery-photo-large {
+        height: 350px;
+    }
+
+    .gallery-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+}
+/* =========================
+   STEP 8 — VIRTUAL TOUR
+========================= */
+
+.tour-section {
+    background: #151515;
+    color: #ffffff;
+    padding: 130px 7vw;
+    overflow: hidden;
+}
+
+.tour-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.tour-heading {
+    margin-bottom: 60px;
+}
+
+.tour-heading .section-eyebrow {
+    color: #a7afa8;
+}
+
+.tour-heading h2 {
+    margin: 18px 0 0;
+
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+}
+
+.tour-heading h2 span {
+    color: #a7afa8;
+}
+
+
+/* FRAME */
+
+.tour-frame {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #222222;
+}
+
+.tour-video {
+    display: block;
+
+    width: 100%;
+    height: 650px;
+
+    object-fit: cover;
+
+    filter: brightness(0.62);
+}
+
+
+/* OVERLAY */
+
+.tour-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.tour-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.tour-circle {
+    width: 105px;
+    height: 105px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: tourPulse 3s ease-in-out infinite;
+}
+
+.tour-circle span {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.tour-center p {
+    margin: 18px 0 0;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #eeeeee;
+}
+
+
+/* TOP LABEL */
+
+.tour-top-label {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    padding: 10px 14px;
+
+    background: rgba(21, 21, 21, 0.9);
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+
+    color: #ffffff;
+}
+
+
+/* BOTTOM */
+
+.tour-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+
+    margin-top: 25px;
+}
+
+.tour-bottom p {
+    max-width: 500px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #aaa7a0;
+}
+
+.tour-bottom span {
+    padding-top: 3px;
+
+    font-size: 10px;
+    letter-spacing: 1.7px;
+
+    color: #777777;
+}
+
+
+/* ANIMATION */
+
+@keyframes tourPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   STEP 8 — MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .tour-section {
+        padding: 90px 6vw;
+    }
+
+    .tour-heading {
+        margin-bottom: 45px;
+    }
+
+    .tour-heading h2 {
+        letter-spacing: -2px;
+    }
+
+    .tour-video {
+        height: 500px;
+    }
+
+    .tour-circle {
+        width: 85px;
+        height: 85px;
+    }
+
+    .tour-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .tour-section {
+        padding: 70px 5vw;
+    }
+
+    .tour-heading h2 {
+        font-size: 50px;
+    }
+
+    .tour-video {
+        height: 420px;
+    }
+
+    .tour-top-label {
+        top: 15px;
+        left: 15px;
+
+        padding: 8px 10px;
+
+        font-size: 8px;
+    }
+
+}
+/* =========================
+   STEP 9 — CONTACT
+========================= */
+
+.contact-section {
+    background: #f5f3ee;
+    padding: 130px 7vw 70px;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.contact-heading {
+    margin-bottom: 75px;
+}
+
+.contact-heading h2 {
+    margin: 18px 0 0;
+
+    font-size: clamp(52px, 6vw, 80px);
+    line-height: 0.95;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+
+    color: #151515;
+}
+
+.contact-heading h2 span {
+    color: #68766a;
+}
+
+
+/* CONTENT */
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 100px;
+
+    padding-bottom: 75px;
+
+    border-bottom: 1px solid #d8d4cc;
+}
+
+
+/* INFO */
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.contact-block span {
+    font-size: 10px;
+    letter-spacing: 1.7px;
+
+    color: #77736c;
+}
+
+.contact-block strong {
+    font-size: 15px;
+    line-height: 1.7;
+
+    font-weight: 500;
+
+    color: #151515;
+}
+
+
+/* ACTIONS */
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.contact-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 19px 20px;
+
+    text-decoration: none;
+
+    border: 1px solid #151515;
+
+    font-size: 13px;
+
+    color: #151515;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        padding 0.3s ease;
+}
+
+.contact-button strong {
+    font-size: 20px;
+    font-weight: 400;
+
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #151515;
+    color: #ffffff;
+
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.contact-button:hover strong {
+    transform: translateX(5px);
+}
+
+
+/* LOCATION */
+
+.location-box {
+    margin-top: 75px;
+
+    padding: 35px;
+
+    background: #151515;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+}
+
+.location-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.location-text span {
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #777777;
+}
+
+.location-text h3 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 500;
+
+    color: #ffffff;
+}
+
+.location-text p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #a7afa8;
+}
+
+
+/* MAP BUTTON */
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #555555;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    color: #ffffff;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.map-button span {
+    font-size: 18px;
+}
+
+.map-button:hover {
+    background: #242424;
+    border-color: #777777;
+}
+
+
+/* FOOTER LINE */
+
+.contact-footer-line {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    color: #77736c;
+}
+
+
+/* =========================
+   STEP 9 — TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        padding: 90px 6vw 60px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================
+   STEP 9 — MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding: 70px 5vw 50px;
+    }
+
+    .contact-heading {
+        margin-bottom: 55px;
+    }
+
+    .contact-heading h2 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .contact-content {
+        padding-bottom: 55px;
+    }
+
+    .location-box {
+        margin-top: 55px;
+
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .location-text h3 {
+        font-size: 24px;
+    }
+
+    .map-button {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .contact-footer-line {
+        flex-direction: column;
+
+        gap: 10px;
+
+        line-height: 1.6;
+    }
+
+}
+/* =========================
+   STEP 10 — FINAL POLISH
+========================= */
+
+
+/* SCROLL REVEAL */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* HEADER SCROLL */
+
+.site-header {
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header.header-scrolled {
+    background: rgba(21, 21, 21, 0.96);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* SMOOTH ANCHOR SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* IMAGE POLISH */
+
+img {
+    max-width: 100%;
+}
+
+
+/* VIDEO POLISH */
+
+video {
+    max-width: 100%;
+}
+
+
+/* SELECTION */
+
+::selection {
+    background: #151515;
+    color: #ffffff;
+}
+
+
+/* ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #68766a;
+    outline-offset: 4px;
+}
+
+
+/* REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-left: 18px;
+
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.language-switch span {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+
+    padding: 5px 2px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.lang-btn:hover {
+    color: #ffffff;
+}
+
+.lang-btn.active {
+    color: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .language-switch {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+}
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 18px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.language-switch span {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    padding: 5px 2px;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.lang-btn:hover {
+    color: #ffffff;
+}
+
+.lang-btn.active {
+    color: #ffffff;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .language-switch {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+}
