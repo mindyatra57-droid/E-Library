@@ -130,7 +130,7 @@ const translations = {
         "why-2-text": "व्यक्तिगत टेबल और आरामदायक सीटिंग, ताकि पढ़ाई के दौरान आपको अपना स्थान मिले।",
 
         "why-3-title": "पढ़ाई के लिए जरूरी सुविधाएँ",
-        "why-3-text": "Wi-Fi, charging, AC, fan, अच्छी रोशनी और अन्य जरूरी सुविधाएँ एक ही जगह।",
+        "why-3-text": "Wi-Fi, charging, fan, अच्छी रोशनी और अन्य जरूरी सुविधाएँ एक ही जगह।",
 
         "why-bottom": "एक ऐसी जगह जहाँ आपका समय पढ़ाई के लिए हो।",
 
@@ -157,7 +157,7 @@ const translations = {
         "facility-3-title": "CCTV",
         "facility-3-text": "अध्ययन स्थान की निगरानी के लिए CCTV सुविधा।",
 
-        "facility-4-title": "AC & Fan",
+        "facility-4-title": "Fan",
         "facility-4-text": "अध्ययन के दौरान आरामदायक वातावरण बनाए रखने के लिए।",
 
         "facility-5-title": "अच्छी रोशनी",
@@ -236,7 +236,7 @@ const translations = {
         "why-2-text": "Personal tables and comfortable seating so you have your own space to study.",
 
         "why-3-title": "Essential Study Facilities",
-        "why-3-text": "Wi-Fi, charging, AC, fan, good lighting and other essential facilities in one place.",
+        "why-3-text": "Wi-Fi, charging, fan, good lighting and other essential facilities in one place.",
 
         "why-bottom": "A place where your time belongs to your studies.",
 
@@ -263,7 +263,7 @@ const translations = {
         "facility-3-title": "CCTV",
         "facility-3-text": "CCTV facility for monitoring the study space.",
 
-        "facility-4-title": "AC & Fan",
+        "facility-4-title": "Fan",
         "facility-4-text": "For a comfortable environment while studying.",
 
         "facility-5-title": "Good Lighting",
